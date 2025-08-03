@@ -1,5 +1,11 @@
 {% extends "store/base.html" %}
 {% block content %}
-<h2>Your Cart</h2>
-<p>Cart items will appear here.</p>
+<h2>Checkout</h2>
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Name">
+    <input type="email" name="email" placeholder="Email">
+    <textarea name="address" placeholder="Shipping Address"></textarea>
+    <button type="submit">Place Order</button>
+</form>
 {% endblock %}
